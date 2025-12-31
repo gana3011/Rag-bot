@@ -1,4 +1,5 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from embedder import embed_text
 
 def split_text(documents):
     splitter = RecursiveCharacterTextSplitter(
@@ -8,4 +9,5 @@ def split_text(documents):
     )
 
     splits = splitter.split_documents(documents)
-    print(splits)
+
+    embed_text(splits)
